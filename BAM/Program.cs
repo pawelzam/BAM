@@ -2,8 +2,8 @@
 {
     public static async Task Main(string[] args)
     {
-        var hackerrrankService = new HackerrankService();
-        var leagues = await hackerrrankService.GetLeaguessAsync();
+        var hackerrankService = new HackerrankService();
+        var leagues = await hackerrankService.GetLeaguessAsync();
         for(int i = 0; i< leagues.Length; i++)
         {
             Console.WriteLine($"{i} {leagues[i]}");
@@ -23,7 +23,7 @@
 
             var league = leagues[index];
 
-            var teams = await hackerrrankService.GetTeamsAsync(league);
+            var teams = await hackerrankService.GetTeamsAsync(league);
             var revenue = await RevenueCalculator.LeagueEarnings(teams);
             Console.WriteLine($"{league}: TotalEarnings = {revenue.TotalEarningsRounded}, AverageRevenuePerMatch={revenue.AverageRevenuePerMatch}");
         }
